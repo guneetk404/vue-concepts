@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning VueJS</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+    
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{greet('afternoon')}}</h1>
+        <a v-bind:href="website"> google </a>
+        <p>Name:{{name}}</p>
+        <p>Job:{{job}}</p>
+        <p>Location:{{location}}</p>
+        <input type="text" v-bind:value="location">
+        <p v-html="websiteTag">hiii</p> 
+    </div>
+    
+         <h1>Dynamic css</h1>
+        <h2> Example 1</h2>
+        <div @click="available=!available" v-bind:class="{available:available}">
+            <span> i am guneet (available)</span>
+        </div>
+        <h2> Example 2</h2>
+        <div v-bind:class="compclasses">
+            <button @click ="available=!available"> On Off button
+            </button>
+            <span>Explaining example 2</span>
+        </div> 
+        
+        <h1> looping through list</h1>
+        <ul>
+            <li v-for="character in characters">{{character}}</li>
+        </ul>
+        <ul>
+            <li v-for="ninja in ninjas">{{ninja.name}}-{{ninja.age}}</li>
+        </ul> 
+    <div id="vue-app-one">
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-two">
+        <greeting></greeting>
+       
+    </div> 
+
+    <div id="vue-app">
+        <h3>Understanding Refs</h3>
+        <input  type="text" ref="input" />
+        <button v-on:click="readRefs">Submit</button>
+        <p>your fav food:{{output}}</p>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
